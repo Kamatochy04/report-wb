@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Feedback Checker</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Roboto, sans-serif;
+        background: linear-gradient(145deg, #f3f4f6, #e9ebee);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .popup-container {
+        width: 300px;
+        padding: 10px;
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1),
+          inset 0 2px 5px rgba(255, 255, 255, 0.4);
+        text-align: center;
+        padding: 25px 20px;
+        transition: all 0.3s ease;
+      }
+
+      .popup-container:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      h2 {
+        font-size: 22px;
+        margin-bottom: 14px;
+        color: #333;
+      }
+
+      .label {
+        display: block;
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 4px;
+        color: #555;
+        text-align: left;
+      }
+
+      .date-input {
+        width: 90%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        background: #f9fafb;
+        font-size: 14px;
+        text-align: center;
+        transition: 0.2s;
+      }
+
+      .date-input:focus {
+        outline: none;
+        border-color: #4caf50;
+        background: #fff;
+        box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+      }
+
+      textarea {
+        width: 90%;
+        height: 60px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+        padding: 8px;
+        font-size: 13px;
+        resize: none;
+        background: #f9fafb;
+        transition: 0.2s;
+      }
+
+      textarea:focus {
+        outline: none;
+        border-color: #4caf50;
+        background: #fff;
+        box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+      }
+
+      #startBtn {
+        margin-top: 16px;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #4caf50, #43a047);
+        color: white;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+      }
+
+      #startBtn:hover {
+        background: linear-gradient(135deg, #45a049, #3e8e41);
+        box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+        transform: translateY(-1px);
+      }
+
+      #startBtn:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+      }
+
+      footer {
+        margin-top: 14px;
+        font-size: 12px;
+        color: #999;
+      }
+
+      footer span {
+        color: #4caf50;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup-container">
+      <h2>Feedback Checker</h2>
+
+      <label class="label" for="startDate">С какого:</label>
+      <input
+        type="text"
+        id="startDate"
+        placeholder="дд.мм"
+        pattern="\d{2}\.\d{2}"
+        title="Введите дату в формате дд.мм (например, 09.10)"
+        class="date-input"
+      />
+
+      <label class="label" for="endDate">По какое:</label>
+      <input
+        type="text"
+        id="endDate"
+        placeholder="дд.мм"
+        pattern="\d{2}\.\d{2}"
+        title="Введите дату в формате дд.мм (например, 13.10)"
+        class="date-input"
+      />
+
+      <label class="label" for="articuls">Артикулы:</label>
+      <textarea
+        id="articuls"
+        placeholder="Введите артикулы через пробел..."
+      ></textarea>
+
+      <button id="startBtn">🚀 Запустить проверку</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
